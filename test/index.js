@@ -43,6 +43,23 @@ describe('minimal-cli-parser', () => {
     expect(parsed).to.have.property('_').with.length(0);
   });
 
+  it('should support implicit type coercion for flags with number values', () => {
+    const parsed = parser(['--alpha', '1']);
+
+    expect(parsed).to.have.property('alpha', 1);
+    expect(parsed).to.have.property('_').with.length(0);
+  });
+
+  it('should support decimal values', () => {
+    const parsed = parser(['--alpha', '1.0', '--beta', '2.9999', '--gamma', '3.', '--delta', '.4']);
+
+    expect(parsed).to.have.property('alpha', 1.0);
+    expect(parsed).to.have.property('beta', 2.9999);
+    expect(parsed).to.have.property('gamma', 3);
+    expect(parsed).to.have.property('delta', 0.4);
+    expect(parsed).to.have.property('_').with.length(0);
+  });
+
   it('should set the value of a flag if using an equal sign', () => {
     const parsed = parser(['--alpha=value1', '--beta=value2']);
 
