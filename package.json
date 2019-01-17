@@ -1,9 +1,9 @@
 {
   "name": "minimal-cli-parser",
   "version": "0.0.1",
-  "description": "The parser used by the package 'minimal-cli'",
+  "description": "The command-line parser used by the package 'minimal-cli'",
   "keywords": [],
-  "author": "Josh Crozier <crozier4@gmail.com> (https://joshcrozier.com/)",
+  "author": "Josh Crozier <crozier4@gmail.com> (https://joshcrozier.com)",
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
