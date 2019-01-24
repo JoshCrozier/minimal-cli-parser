@@ -1,8 +1,16 @@
 {
   "name": "minimal-cli-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The command-line parser used by the package 'minimal-cli'",
-  "keywords": [],
+  "keywords": [
+    "command",
+    "command-line",
+    "parser",
+    "args",
+    "argv",
+    "argument",
+    "cli"
+  ],
   "author": "Josh Crozier <crozier4@gmail.com> (https://joshcrozier.com)",
   "license": "MIT",
   "scripts": {
