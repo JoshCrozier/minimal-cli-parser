@@ -12,6 +12,7 @@ The command-line parser used by the package [minimal-cli](https://github.com/Jos
 - Useful for parsing [`process.argv`](https://nodejs.org/docs/latest/api/process.html)
 - Supports regular flags `--flag` and shorthand flags `-f`
 - Automatically infers variable types by default
+- Converts hyphenated flags to camel case
 
 ## Installation
 

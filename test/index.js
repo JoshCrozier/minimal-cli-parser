@@ -117,6 +117,14 @@ describe('minimal-cli-parser', () => {
     expect(parsed).to.have.property('has--odd---hyphen-usage', true);
   });
 
+  it('should convert hyphenated flags to camel case', () => {
+    const parsed = parser(['command', '--output-path', './results', '--has-multiple-hyphens', '--has--odd---hyphen-usage']);
+
+    expect(parsed).to.have.property('outputPath', './results');
+    expect(parsed).to.have.property('hasMultipleHyphens', true);
+    expect(parsed).to.have.property('hasOddHyphenUsage', true);
+  });
+
   it('should handle spacing consistently', () => {
     const parsed = parser(['-a123', '-bc456', '--beta456', '--gamma=value1', '-d=value2', '-e', '-fg90', '-x', '7', '-y=8.9', '-z', '1.2']);
 
