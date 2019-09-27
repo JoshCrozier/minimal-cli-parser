@@ -109,6 +109,14 @@ describe('minimal-cli-parser', () => {
     expect(parsed).to.have.property('_').that.contains('command');
   });
 
+  it('should handle hyphenated flags', () => {
+    const parsed = parser(['command', '--output-path', './results', '--has-multiple-hyphens', '--has--odd---hyphen-usage']);
+
+    expect(parsed).to.have.property('output-path', './results');
+    expect(parsed).to.have.property('has-multiple-hyphens', true);
+    expect(parsed).to.have.property('has--odd---hyphen-usage', true);
+  });
+
   it('should handle spacing consistently', () => {
     const parsed = parser(['-a123', '-bc456', '--beta456', '--gamma=value1', '-d=value2', '-e', '-fg90', '-x', '7', '-y=8.9', '-z', '1.2']);
 
